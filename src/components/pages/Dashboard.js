@@ -13,8 +13,8 @@ const Dashboard = () => {
     <Grid container>
       <Grid item sm={4} sx={{ backgroundColor: 'gray', p: 5, color: 'white' }}>
         <h1>Dashboard</h1>
-        <Typography variant='h5'>Email: sonam@gmail.com</Typography>
-        <Typography variant='h6'>Name: Sonam</Typography>
+        <Typography variant='h5'>Email: billykamze3@gmail.com</Typography>
+        <Typography variant='h6'>Name: Billy</Typography>
         <Button variant='contained' color='warning' size='large' onClick={handleLogout} sx={{ mt: 8 }}>Logout</Button>
       </Grid>
       <Grid item sm={8}>

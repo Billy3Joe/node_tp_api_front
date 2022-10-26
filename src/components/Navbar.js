@@ -9,11 +9,11 @@ const Navbar = () => {
         <Toolbar>
           <Typography variant='h5' component="div" sx={{ flexGrow: 1 }}>BOOK</Typography>
 
-          <Button component={NavLink} to='/' style={({ isActive }) => { return { backgroundColor: isActive ? 'white' : '' } }} sx={{ color: 'orange', textTransform: 'none' }}>Home</Button>
+          <Button component={NavLink} to='/' style={({ isActive }) => { return { backgroundColor: isActive ? 'orange' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Home</Button>
 
-          <Button component={NavLink} to='/contact' style={({ isActive }) => { return { backgroundColor: isActive ? 'white' : '' } }} sx={{ color: 'orange', textTransform: 'none' }}>Contact</Button>
+          <Button component={NavLink} to='/contact' style={({ isActive }) => { return { backgroundColor: isActive ? 'white' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Contact</Button>
 
-          <Button component={NavLink} to='/login' style={({ isActive }) => { return { backgroundColor: isActive ? 'white' : '' } }} sx={{ color: 'orange', textTransform: 'none' }}>Login/Registration</Button>
+          <Button component={NavLink} to='/login' style={({ isActive }) => { return { backgroundColor: isActive ? 'white' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Login/Registration</Button>
 
         </Toolbar>
       </AppBar>
