@@ -1,7 +1,7 @@
 import { TextField, FormControlLabel, Checkbox, Button, Box, Alert } from '@mui/material';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
 const Registration = () => {
   const [error, setError] = useState({
     status: false,
@@ -21,6 +21,13 @@ const Registration = () => {
     }
     if (actualData.name && actualData.email && actualData.password && actualData.password_confirmation && actualData.tc !== null) {
       if (actualData.password === actualData.password_confirmation) {
+        axios.post('http://localhost:5000/api/v1/create-user/',{
+          name:"Junior1500",
+          email:"junior12@gmail.com", 
+          password:"Junior123",
+          phone:"06542154"
+      
+      });
         console.log(actualData);
         document.getElementById('registration-form').reset()
         setError({ status: true, msg: "Registration Successful", type: 'success' })
