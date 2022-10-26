@@ -15,19 +15,14 @@ const Registration = () => {
     const actualData = {
       name: data.get('name'),
       email: data.get('email'),
+      phone: data.get('phone'),
       password: data.get('password'),
       password_confirmation: data.get('password_confirmation'),
       tc: data.get('tc'),
     }
-    if (actualData.name && actualData.email && actualData.password && actualData.password_confirmation && actualData.tc !== null) {
+    if (actualData.name && actualData.email && actualData.phone && actualData.password && actualData.password_confirmation && actualData.tc !== null) {
       if (actualData.password === actualData.password_confirmation) {
-        axios.post('http://localhost:5000/api/v1/create-user/',{
-          name:"Junior1500",
-          email:"junior12@gmail.com", 
-          password:"Junior123",
-          phone:"06542154"
-      
-      });
+        axios.post('http://localhost:5000/api/v1/create-user/',actualData);
         console.log(actualData);
         document.getElementById('registration-form').reset()
         setError({ status: true, msg: "Registration Successful", type: 'success' })
@@ -43,6 +38,7 @@ const Registration = () => {
     <Box component='form' noValidate sx={{ mt: 1 }} id='registration-form' onSubmit={handleSubmit}>
       <TextField margin='normal' required fullWidth id='name' name='name' label='Name' />
       <TextField margin='normal' required fullWidth id='email' name='email' label='Email Address' />
+      <TextField margin='normal' required fullWidth id='phone' name='phone' label='Phone' />
       <TextField margin='normal' required fullWidth id='password' name='password' label='Password' type='password' />
       <TextField margin='normal' required fullWidth id='password_confirmation' name='password_confirmation' label='Confirm Password' type='password' />
       <FormControlLabel control={<Checkbox value="agree" color="primary" name="tc" id="tc" />} label="I agree to term and condition." />
