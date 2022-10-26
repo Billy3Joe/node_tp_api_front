@@ -1,5 +1,6 @@
 import { AppBar, Box, Toolbar, Typography, Button } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import '../style/navbar.css'
 const Navbar = () => {
   return <>
     <Box sx={{ flexGrow: 1 }}>

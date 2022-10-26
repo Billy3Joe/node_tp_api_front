@@ -6,6 +6,7 @@ import Contact from "./components/pages/Contact";
 import Dashboard from "./components/pages/Dashboard";
 import Home from "./components/pages/Home";
 import Layout from "./components/pages/Layout";
+import './style/navbar.css';
 
 function App() {
   return (
