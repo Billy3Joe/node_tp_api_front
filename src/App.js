@@ -4,6 +4,7 @@ import ResetPassword from "./components/pages/auth/ResetPassword";
 import SendPasswordResetEmail from "./components/pages/auth/SendPasswordResetEmail";
 import Contact from "./components/pages/Contact";
 import Dashboard from "./components/pages/Dashboard";
+import Register from "./components/pages/Register";
 import Home from "./components/pages/Home";
 import Layout from "./components/pages/Layout";
 
@@ -20,6 +21,8 @@ function App() {
             <Route path="reset" element={<ResetPassword />} />
           </Route>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/home" element={<Home />} />
           <Route path="*" element={<h1>Error 404 Page not found !!</h1>} />
         </Routes>
       </BrowserRouter>
