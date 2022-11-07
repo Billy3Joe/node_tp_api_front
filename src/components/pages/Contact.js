@@ -1,6 +1,8 @@
 import { Grid } from "@mui/material";
 
 const Contact = () => {
+  const aut=window.localStorage.getItem('myuser');
+  console.log(aut)
   return <>
     <Grid container justifyContent='center'>
       <Grid item sm={10}>

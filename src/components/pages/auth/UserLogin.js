@@ -1,7 +1,7 @@
 import { TextField, Button, Box, Alert } from '@mui/material';
 import axios from 'axios';
 import { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Navigate, NavLink, useNavigate } from 'react-router-dom';
 const UserLogin = () => {
   const [error, setError] = useState({
     status: false,
@@ -20,18 +20,24 @@ const UserLogin = () => {
       axios.post('http://localhost:5000/api/v1/login',actualData).then(
         (dat)=>{console.log("dataglobal",dat);
         console.log("datalibghit",dat.data);
+        window.localStorage.setItem('token', dat.data.token);
+        window.localStorage.setItem('isAdmin',dat.data.isAdmin)
+        navigate('/')
+        
         }
       )
-     
-      console.log(actualData);
+      
 
       document.getElementById('login-form').reset()
       setError({ status: true, msg: "Login Success", type: 'success' });
-      navigate('/home')
+      
+      // navigate('/home')
     } else {
       setError({ status: true, msg: "All Fields are Required", type: 'error' })
     }
+
   }
+  
   return <>
     <Box component='form' noValidate sx={{ mt: 1 }} id='login-form' onSubmit={handleSubmit}>
       <TextField margin='normal' required fullWidth id='email' name='email' label='Email Address' />
