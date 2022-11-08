@@ -112,30 +112,33 @@ const CreateUser = () => {
                     {errors.phone?.message}
                   </div>
                 </Form.Group>
-
-                {/* Description */}
-                <Form.Group style={{paddingTop:"15px", width:"1263px"}}>
-                  <Form.Select aria-label="Default select example"
-                  
-                  {...register("role")}
+                
+                <div style={{display:"flex", justifyContent:"center", gap:"10px", flexDirection:"column", alignItems:"center"}}>
+                    {/* Description */}
+                  <Form.Group style={{paddingTop:"15px", width:"480px"}}>
+                    <Form.Select aria-label="Default select example"
                     
-                  className={`form-control ${
-                    errors.role ? "is-invalid" : ""
-                  }`}
-                  
-                  >
-                    <div className="invalid-feedback">
-                      {errors.role?.message}
-                    </div> 
-                    <option value="1">true</option>
-                    <option value="2">false</option>
-                  </Form.Select>
-                </Form.Group>
+                    {...register("role")}
+                      
+                    className={`form-control ${
+                      errors.role ? "is-invalid" : ""
+                    }`}
+                    
+                    >
+                      <div className="invalid-feedback">
+                        {errors.role?.message}
+                      </div> 
+                      <option value="1">true</option>
+                      <option value="2">false</option>
+                    </Form.Select>
+                  </Form.Group>
 
-                <br />
-                <Button className="registerButton" type="submit" style={{padding:"10px", width:"1263px"}} >
-                  Create User
-                </Button>
+                  <br />
+                  <Button className="registerButton" type="submit" style={{padding:"10px", width:"470px"}} >
+                    Create User
+                  </Button>
+                </div>
+               
               </Form>
             
             </Card.Body>
