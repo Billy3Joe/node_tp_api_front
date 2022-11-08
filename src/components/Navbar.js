@@ -2,8 +2,6 @@ import { AppBar, Box, Toolbar, Typography, Button } from '@mui/material';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Logo from '../images/logo.png'
 
-
-
 const Navbar = () => {
   const navigate=useNavigate();
   const handleLogout = () => {
