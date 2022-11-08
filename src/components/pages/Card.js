@@ -18,10 +18,10 @@ export default class Card extends Component {
         </NavLink>
        
         <div className="card-body">
-          <h2>{this.props.title}</h2>
-          <p>{this.props.categories}</p>
-          <p>{this.props.description}</p>
-          <p>{this.props.price}</p>
+          <h2  style={{color:"#000", textTransform:"uppercase"}}>{this.props.title}</h2>
+          <p  style={{color:"orange", textTransform:"uppercase"}}>{this.props.categories}</p>
+          <p style={{textAlign:"justify"}}>{this.props.description}</p>
+          <p>{this.props.price} €</p>
           <p>{this.props.createdAt}</p>
     
           <p style={{display:"flex", gap:"10px", justifyContent:"center"}}> 
@@ -34,7 +34,7 @@ export default class Card extends Component {
             </button>
           </p>
 
-          <h5>{this.props.author}</h5>
+          <h5>Publué par <strong style={{color:"green", textDecoration:"underline"}}>{this.props.author}</strong></h5>
         </div>
       </div>
     );

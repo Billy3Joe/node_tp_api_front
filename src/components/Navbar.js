@@ -12,7 +12,7 @@ const Navbar = () => {
     navigate('/');
   }
   return <>
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }}  style={{position:"sticky", top:"0", zIndex:"1000"}}>
       <AppBar position="static" color="primary">
         <Toolbar>
           <Typography variant='h5' component="div" sx={{ flexGrow: 1 }}><img style={{width:"70px", heigth:"70px"}} src={Logo} alt="Logo" / ></Typography>
