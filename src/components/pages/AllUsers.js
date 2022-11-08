@@ -3,6 +3,7 @@ import { Grid } from "@mui/material";
 import "../pages/styles.css";
 import axios from "axios";
 import CardUser from "../pages/CardUser";
+import Logo from '../../images/logo.png'
 import React, { Component } from "react";
 import {NavLink} from 'react-router-dom';
 import ReactLoading from "react-loading";
@@ -30,12 +31,14 @@ export default class AllUsers extends Component {
       <>
        <Grid container justifyContent='center'>
         <Grid item sm={10}> 
-           <div style={{display:"flex", justifyContent:"center", alignItems:"center", gap:"10px"}}>
-            <h1 style={{textAlign:"center"}}>ALL USERS</h1>
-            <p style={{textAlign:"center"}}><NavLink to='/create-user' >CREATE USER</NavLink></p>
+           <br />
+           <div style={{display:"flex", flexDirection:"column", justifyContent:"space-between", alignItems:"center"}}>
+            <img style={{width:"290px", heigth:"290px"}} src={Logo} alt="Logo" / >
+            <h1><NavLink to='/create-user'style={{textAlign:"center", color:"orange", textDecoration:"none", fontSize:"35px", fontWeight:"bold"}} >CREATE USERS</NavLink></h1>
+            {/* <h1 style={{textAlign:"center"}}>ALL BOOKS</h1> */}
            </div>
             <hr />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio earum officiis debitis vel tenetur quos animi vero voluptates reiciendis, omnis sed in libero temporibus deleniti pariatur expedita corporis officia. Odit enim, quasi facere magnam earum officiis ipsa aliquid impedit velit quibusdam dolor ex esse ratione explicabo quod, culpa temporibus? Dolorem deleniti doloremque maxime quas deserunt. Ex aspernatur saepe illo eaque corrupti placeat, aperiam nulla adipisci itaque quos necessitatibus iure at minus non delectus ratione quod ad. Alias dolore perferendis est expedita iure! Nostrum laborum tempore amet commodi voluptas accusamus enim repudiandae, quia odio cumque, laboriosam architecto illo! Aliquid, fuga quis.</p>
+          
         </Grid>
        </Grid>
         {isloading ? (

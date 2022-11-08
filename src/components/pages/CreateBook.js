@@ -60,7 +60,7 @@ const CreateBook = () => {
 
   return (
     <>
-       <h1 style={{textAlign:"center"}}>CREATE BOOK</h1>
+       <h1 style={{textAlign:"center", color:"orange", textDecoration:"none", fontSize:"35px", fontWeight:"bold"}}>CREATE BOOK</h1>
       <Container>
         <Row className="justify-content-md-center">
           <Card className="registerCardPage">

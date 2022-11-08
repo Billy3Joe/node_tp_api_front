@@ -19,9 +19,9 @@ const Navbar = () => {
           <Button component={NavLink} to='/' style={({ isActive }) => { return { backgroundColor: isActive ? 'orange' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Home</Button>
 
           {window.localStorage.getItem('isAdmin')=='true'?<Button component={NavLink} to='/create-book' style={({ isActive }) => { return { backgroundColor: isActive ? 'white' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Create Book</Button>:""}
-          <Button component={NavLink} to='/create-book' style={({ isActive }) => { return { backgroundColor: isActive ? 'orange' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Create Book</Button>
+          {/* <Button component={NavLink} to='/create-book' style={({ isActive }) => { return { backgroundColor: isActive ? 'orange' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Create Book</Button> */}
           
-          <Button component={NavLink} to='/all-user' style={({ isActive }) => { return { backgroundColor: isActive ? 'orange' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>All Users</Button>
+          <Button component={NavLink} to='/all-user' style={({ isActive }) => { return { backgroundColor: isActive ? 'orange' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Users</Button>
 
           
           
@@ -29,7 +29,7 @@ const Navbar = () => {
          
 
           <Button component={NavLink} to='/' onClick={handleLogout}  sx={{ color: 'white', textTransform: 'none' }}>Logout</Button>:
-          <Button component={NavLink} to='/login' style={({ isActive }) => { return { backgroundColor: isActive ? 'orange' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Login/Registration</Button>
+          <Button component={NavLink} to='/login' style={({ isActive }) => { return { backgroundColor: isActive ? 'orange' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Signin/Signup</Button>
           }
           
 

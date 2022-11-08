@@ -58,7 +58,7 @@ const CreateUser = () => {
 
   return (
     <>
-       <h1 style={{textAlign:"center"}}>CREATE USER</h1>
+       <h1 style={{textAlign:"center", color:"orange", textDecoration:"none", fontSize:"35px", fontWeight:"bold"}}>CREATE USER</h1>
       <Container>
         <Row className="justify-content-md-center">
           <Card className="registerCardPage">
