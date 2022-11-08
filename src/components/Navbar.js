@@ -18,18 +18,15 @@ const Navbar = () => {
           <Typography variant='h5' component="div" sx={{ flexGrow: 1 }}><img style={{width:"70px", heigth:"70px"}} src={Logo} alt="Logo" / ></Typography>
           <Button component={NavLink} to='/' style={({ isActive }) => { return { backgroundColor: isActive ? 'orange' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Home</Button>
 
-          {window.localStorage.getItem('isAdmin')=='true'?<Button component={NavLink} to='/create-book' style={({ isActive }) => { return { backgroundColor: isActive ? 'white' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Create Book</Button>:""}
+          {window.localStorage.getItem('isAdmin')=='true'?<Button component={NavLink} to='/create-book' style={({ isActive }) => { return { backgroundColor: isActive ? 'orange' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Create Book</Button>:""}
           {/* <Button component={NavLink} to='/create-book' style={({ isActive }) => { return { backgroundColor: isActive ? 'orange' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Create Book</Button> */}
           
           <Button component={NavLink} to='/all-user' style={({ isActive }) => { return { backgroundColor: isActive ? 'orange' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Users</Button>
-
           
-          
-          {window.localStorage.getItem('token')!==null?
-         
-
-          <Button component={NavLink} to='/' onClick={handleLogout}  sx={{ color: 'white', textTransform: 'none' }}>Logout</Button>:
-          <Button component={NavLink} to='/login' style={({ isActive }) => { return { backgroundColor: isActive ? 'orange' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Signin/Signup</Button>
+          {
+            window.localStorage.getItem('token')!==null?
+            <Button component={NavLink} to='/' onClick={handleLogout}  sx={{ color: 'white', textTransform: 'none' }}>Logout</Button>:
+            <Button component={NavLink} to='/login' style={({ isActive }) => { return { backgroundColor: isActive ? 'orange' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Signin/Signup</Button>
           }
           
 

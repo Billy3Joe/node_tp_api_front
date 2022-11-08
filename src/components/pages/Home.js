@@ -33,7 +33,11 @@ export default class Home extends Component {
            <br />
            <div style={{display:"flex", flexDirection:"column", justifyContent:"space-between", alignItems:"center"}}>
             <img style={{width:"290px", heigth:"290px"}} src={Logo} alt="Logo" / >
+            {window.localStorage.getItem('isAdmin')==="true"?
             <h1><NavLink to='/create-book'style={{textAlign:"center", color:"orange", textDecoration:"none", fontSize:"35px", fontWeight:"bold"}} >CREATE BOOK</NavLink></h1>
+            :""
+            }
+            
             {/* <h1 style={{textAlign:"center"}}>ALL BOOKS</h1> */}
            </div>
             <hr />

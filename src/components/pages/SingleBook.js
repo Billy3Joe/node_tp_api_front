@@ -24,14 +24,14 @@ class SingleBook extends Component {
     console.log(id);
     await axios.get(`http://localhost:5000/api/v1/single-book/${id}`).then((res) => {
         // console.log(res);
-      const book = res;
+      const book = res.data.data;
       this.setState({ book, isloading: false });
     });
   }
 
   render() {
     let x = this.state.book;
-    console.log(`Data disponible`,x.data);
+    console.log(`Data disponible`,x.imageURL);
     let { isloading } = this.state;
     return (
       <>
@@ -47,20 +47,12 @@ class SingleBook extends Component {
           <ReactLoading type={"bars"} color="#021155" />
         ) : (
             <div className="cards">
-              {(() => {
-                <p>Hello</p>
-                return (
-                  <Card
-                    id = {x._id}
-                    imageURL={x.imageURL}
-                    title={x.title}
-                    categories={x.categories}
-                    description={x.description}
-                    price={x.price}
-                    author={x.author}
-                  />
-                );
-              })}
+            
+                <img src={x.imageURL} alt="imageURL" style={{width:"390px", height:"250px"}} />
+                    {x.title}
+
+                    {x.author}
+                    
             </div>
         )}
       </>

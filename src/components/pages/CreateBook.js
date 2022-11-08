@@ -6,9 +6,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import axios from "../pages/axiosInstance";
-
 const schema = yup.object().shape({
   title: yup
     .string()
@@ -36,12 +34,40 @@ const CreateBook = () => {
 //   const [role, setRole] = useState("tech");
   const [resStatus, setResStatus] = useState("");
   const navigate = useNavigate();
+  const [form,setForm]=useState();
   const onSubmitHandler = (data) => {
-    // data.role = role;
-    console.log(data);
+    data.preventDefault();
+    const dat = new FormData(data.currentTarget)
+    console.log();
+    const element = document.getElementById('image')
+    const file = element.files[0]
+
+    console.log(file)
+    const form = new FormData()
+    form.append("title", dat.get('title'))
+    form.append("author", dat.get('author'))
+    form.append("categories", dat.get('categories'))
+    form.append("description", dat.get('description'))
+    form.append("price", dat.get('price'))
+    form.append("isbn", dat.get('isbn'))
+    form.append("nbr_pages", dat.get('nbr_pages'))
+    form.append("image",file,file.name)
+    
+    
+  console.log(form.get('nbr_pages'))
+  
+  
+    console.log(form);
 
     axios
-      .post("http://localhost:5000/api/v1/create-user/", data)
+      .post("http://localhost:5000/api/v1/create-book/",dat,{
+        headers: {
+          'content-type': 'application/json; charset=utf-8',
+          Authorization: `Bearer ${window.localStorage.getItem('token')}`
+        }
+            
+        
+    })
       .then(function (response) {
         console.log(response.status);
         if (response.status === 200) {
@@ -70,7 +96,7 @@ const CreateBook = () => {
             <Card.Body>
 
               {/* Title */}
-              <Form onSubmit={handleSubmit(onSubmitHandler)}>
+              <Form onSubmit={onSubmitHandler}>
                 <Form.Group>
                   <Form.Label>Titre</Form.Label>
                   <input
@@ -181,6 +207,7 @@ const CreateBook = () => {
                   <input
                     {...register("image")}
                     type="file"
+                    id="image"
                     className={`form-control ${
                       errors.image ? "is-invalid" : ""
                     }`}

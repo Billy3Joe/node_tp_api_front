@@ -18,7 +18,11 @@ export default class AllUsers extends Component {
   }
 
   async componentDidMount() {
-    await axios.get(`http://localhost:5000/api/v1/all-user`).then((res) => {
+    await axios.get(`http://localhost:5000/api/v1/all-user`,{
+      headers:{
+        Authorization: `Bearer ${window.localStorage.getItem('token')}`
+      }
+    }).then((res) => {
       const users = res;
       this.setState({ users, isloading: false });
     });
@@ -34,7 +38,7 @@ export default class AllUsers extends Component {
            <br />
            <div style={{display:"flex", flexDirection:"column", justifyContent:"space-between", alignItems:"center"}}>
             <img style={{width:"290px", heigth:"290px"}} src={Logo} alt="Logo" / >
-            <h1><NavLink to='/create-user'style={{textAlign:"center", color:"orange", textDecoration:"none", fontSize:"35px", fontWeight:"bold"}} >CREATE USERS</NavLink></h1>
+            <h1><NavLink to='/all-user'style={{textAlign:"center", color:"orange", textDecoration:"none", fontSize:"35px", fontWeight:"bold"}} >USERS STARBOOK. A</NavLink></h1>
             {/* <h1 style={{textAlign:"center"}}>ALL BOOKS</h1> */}
            </div>
             <hr />
