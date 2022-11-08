@@ -59,7 +59,7 @@ export default class AllUsers extends Component {
         </Grid>
        </Grid>
         {isloading ? (
-          <ReactLoading type={"bars"} color="#021155" />
+          <ReactLoading type={"bars"} color="#021155" style={{textAlign:"center"}} />
         ) : (
             <div className="cards">
               {res?.data?.data?.map((x) => {
