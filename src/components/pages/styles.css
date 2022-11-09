@@ -1,5 +1,6 @@
 body {
-  background: hsla(210, 20%, 90%, 1);
+  /* background: hsla(210, 20%, 90%, 1); */
+  background: #fff;
   padding:0;
   margin: 0;
   line-height: 1.6;
@@ -176,13 +177,27 @@ div#securitySection {
 
 
 /* CSS SINGLE BOOK */
+.titleSingleBook{
+text-align: center;
+color: orange;
+text-decoration: none;
+}
+
+.imgSingleBook{
+  width: 380px;
+  height: 380px;
+}
+.card-single-book{ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card-body-single-book{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-
   text-align: center;
   background: #fff;
   padding: 20px;
@@ -193,27 +208,33 @@ div#securitySection {
   box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25), 0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
   transition: all ease 200ms;
 }
-
-.card-body-single-book:hover {
-  transform: scale(1.03);
-  box-shadow: 0 13px 40px -5px hsla(240, 30.1%, 28%, 0.12), 0 8px 32px -8px hsla(0, 0%, 0%, 0.14), 0 -6px 32px -6px hsla(0, 0%, 0%, 0.02);
+.cardComments{
+ background: orange;
 }
+
 .comments{
   text-align: center;
-    /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.48);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: gray;
 }
 
-/* CSS COMMENTS */
+/* CSS FORM COMMENTS */
+.review-comment-form{
+  position: relative;
+
+}
+.commenter{
+  text-align: center;
+  color: gray;
+  font-weight: 100;
+}
 .from-group {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  justify-content: center;
+  margin-top: 0px;
+  width: 500px;
+  height: 500px;
+  margin-left: 520px;
 }
 .comment-form {
   position: relative;
@@ -223,24 +244,99 @@ div#securitySection {
   font-weight: 300;
   letter-spacing: 0.07em;
   color: #999;
-  background-color: transparent;
+  /* background-color: transparent; */
   border: 1px solid #e1e1e1;
   outline: 0;
+  
+    /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.48);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .comment-form-comment {
   display: block;
   height: 186px;
   color: #555;
 }
-
+.reply-title{
+  text-align: center;
+}
 .registerButton{
   background-color: orange;
   color: white;
   border: 2px solid #fff;
   border-radius: 5px;
+  position: absolute;
+  left: 520px;
+  bottom: 15px;
+  width: 503px;
 }
 
 .registerButton:hover{
   background-color: rgb(255, 201, 100);
   transition: 0.7s ease;
+}
+
+
+@media (max-width: 960px) {
+  .card-single-book{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .imgSingleBook{
+    width: 250px;
+    height: 250px;
+  }
+  .from-group {
+    width: 370px;
+    height: 200px;
+    margin-left: 3px;
+  }
+  .registerButton{
+    background-color: orange;
+    color: white;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    position: relative;
+    left: 0px;
+    top: 30px;
+    width: 373px;
+  }
+  .br{
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-single-book{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .imgSingleBook{
+    width: 350px;
+    height: 350px;
+  }
+  .from-group {
+    width: 370px;
+    height: 200px;
+    margin-left: 3px;
+  }
+  .registerButton{
+    background-color: orange;
+    color: white;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    position: relative;
+    left: 0px;
+    top: 30px;
+    width: 373px;
+  }
+  .br{
+    padding-top: 70px;
+  }
 }

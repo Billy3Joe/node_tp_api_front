@@ -1,20 +1,17 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+// import { useNavigate } from 'react-router-dom';
 import { TextField, FormControlLabel, Checkbox, Button, Box, Alert } from '@mui/material';
-// import { Container, Card, Button, Form, Tab, Tabs, Row } from "react-bootstrap";
-// import "../pages/styles.css";
-// import { useForm } from "react-hook-form";
-// import { yupResolver } from "@hookform/resolvers/yup";
-// import * as yup from "yup";
+
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from "../pages/axiosInstance";
+
 const CreateBook = () => {
     const [error, setError] = useState({
       status: false,
       msg: "",
       type: ""
     })
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const handleSubmit = (e) => {
       e.preventDefault();
       const data = new FormData(e.currentTarget);

@@ -8,6 +8,8 @@ import React, { Component } from "react";
 import { NavLink} from 'react-router-dom';
 import ReactLoading from "react-loading";
 import { useParams } from "react-router-dom";
+import WriteComments from "./WriteComment";
+import ViewComments from "../pages/ViewComments";
 
 
 function withParams(Component) {
@@ -54,7 +56,7 @@ class SingleBook extends Component {
             <h1><NavLink to='/'onClick={handleLogout} style={{textAlign:"center",backgroundColor:"orange",borderRadius:"10px", padding:"3px", color:"#fff", textDecoration:"none", fontSize:"30px"}} ><img style={{width:"100px", heigth:"100px"}} src={Logout} alt="Logout btn" / ></NavLink></h1>
            </div>
             {/* <img style={{width:"290px", heigth:"290px"}} src={Logo} alt="Logo" / > */}
-            <h1><NavLink to='/all-user'style={{textAlign:"center", color:"orange", textDecoration:"none", fontSize:"35px", fontWeight:"bold"}} >BOOK STARBOOK ACADEMY</NavLink></h1>
+            <h1 className="titleSingleBook">BOOK STARBOOK ACADEMY</h1>
             {/* <h1 style={{textAlign:"center"}}>ALL BOOKS</h1> */}
            </div>
             <hr />
@@ -64,8 +66,9 @@ class SingleBook extends Component {
         {isloading ? (
           <ReactLoading type={"bars"} color="#021155" />
         ) : (
-            <div className="card-single-book">
-              <img src={x.imageUrl} alt="imageUrl" style={{width:"390px", height:"250px"}} />
+          <div>
+              <div className="card-single-book">
+              <img src={x.imageUrl} alt="imageUrl" className="imgSingleBook" />
                <div className="card-body-single-book">
                  <h2  style={{color:"#000", textTransform:"uppercase"}}>{x.title}</h2>
                  <p  style={{color:"orange", textTransform:"uppercase"}}>{x.categories}</p>
@@ -77,45 +80,24 @@ class SingleBook extends Component {
                  <h5>Publué par <strong style={{color:"green", textDecoration:"underline"}}>{x.author}</strong></h5>
                  <br />
               </div>
-              <div className="comments">
-                <h1>Commentaires</h1>
+              <div>
+               <img src={x.imageUrl} alt="imageUrl" className="imgSingleBook" />
+              </div>
+            </div> 
+        
+               <br />
 
-                <p>Premier commentaire avec son auteur</p>
-                <p>Deuxième commentaire avec son auteur</p>
-                <p>Troisième commentaire avec son auteur</p>
-
-                <h1>Commenter</h1>
-                <div className="review-comment-form">
-                  <div className="reply-title">
-                    <span className="r-title">
-                      Be the first to review “Wellness And Paradise”
-                    </span>
-                  </div>
-                  <div className="from-group">
-                    <textarea
-                      class="comment-form comment-form-comment"
-                      placeholder="Your review"
-                      rows="8"
-                      columns="45"
-                    ></textarea>
-                    <input
-                      type="text"
-                      class="comment-form comment-form-author"
-                      placeholder="Your name"
-                    />
-                     <input
-                      type="text"
-                      class="comment-form comment-form-author"
-                      placeholder="Your grade"
-                    />
-
-                  </div>
-                  <button className="registerButton" type="submit" style={{padding:"5px"}}>
-                  Envoyer
-                </button>
+              <div className="cardComments">
+                <div className="comments">
+                  <h1 style={{fontWeight:"100"}}>Commentaires</h1>
+                  <ViewComments />
+                </div>
+                <div>
+                  {/* <h1 className="commenter">Commenter</h1> */}
+                  <WriteComments />
                 </div>
               </div>
-            </div>   
+          </div>
         )}
       </>
     );
