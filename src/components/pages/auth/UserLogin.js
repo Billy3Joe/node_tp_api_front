@@ -29,7 +29,7 @@ const UserLogin = () => {
       
 
       document.getElementById('login-form').reset()
-      setError({ status: true, msg: "Login Success", type: 'success' });
+      // setError({ status: true, msg: "Login Success", type: 'success' });
       
       // navigate('/home')
     } else {

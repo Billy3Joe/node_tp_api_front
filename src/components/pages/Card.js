@@ -28,7 +28,7 @@ export default class Card extends Component {
     return (
       <div className="card">
         <NavLink to={URL}>
-         <img src={this.props.imageURL} alt="imageURL" style={{width:"390px", height:"250px"}} />
+         <img src={this.props.imageURL} alt="imageURL" className="imgHomeBook" />
         </NavLink>
        
         <div className="card-body">

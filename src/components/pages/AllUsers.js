@@ -51,7 +51,7 @@ export default class AllUsers extends Component {
             <h1><NavLink to='/'onClick={handleLogout} style={{textAlign:"center",backgroundColor:"orange",borderRadius:"10px", padding:"3px", color:"#fff", textDecoration:"none", fontSize:"30px"}} ><img style={{width:"100px", heigth:"100px"}} src={Logout} alt="Logout btn" / ></NavLink></h1>
            </div>
             {/* <img style={{width:"290px", heigth:"290px"}} src={Logo} alt="Logo" / > */}
-            <h1><NavLink to='/all-user'style={{textAlign:"center", color:"orange", textDecoration:"none", fontSize:"35px", fontWeight:"bold"}} >USERS STARBOOK ACADEMY</NavLink></h1>
+            <h1 className="titleAllUsers">USERS STARBOOK ACADEMY</h1>
             {/* <h1 style={{textAlign:"center"}}>ALL BOOKS</h1> */}
            </div>
             <hr />
@@ -59,7 +59,7 @@ export default class AllUsers extends Component {
         </Grid>
        </Grid>
         {isloading ? (
-          <ReactLoading type={"bars"} color="#021155" style={{textAlign:"center"}} />
+          <ReactLoading type={"bars"} color="#021155" />
         ) : (
             <div className="cards">
               {res?.data?.data?.map((x) => {

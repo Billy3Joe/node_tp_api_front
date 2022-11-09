@@ -38,7 +38,7 @@ const WriteComment= () => {
     }
     return <>
       <Box component='form' noValidate sx={{ mt: 1 }} id='registration-form' onSubmit={handleSubmit}>
-      <div className="review-comment-form">
+              <div className="review-comment-form">
                 <div className="from-group">
                   <textarea
                     class="comment-form comment-form-comment"

@@ -51,19 +51,19 @@ class SingleBook extends Component {
         <Grid item sm={10}> 
            <div style={{display:"flex", flexDirection:"column", justifyContent:"space-between", alignItems:"center"}}>
            <br />
-           <div style={{display:"flex", justifyContent:"center", gap:"100px"}}>
-            <h1><NavLink to='/'style={{textAlign:"center",backgroundColor:"orange",borderRadius:"10px", padding:"3px", color:"#fff", textDecoration:"none", fontSize:"30px"}} ><img style={{width:"100px", heigth:"100px"}} src={Retour} alt="Retour btn" / ></NavLink></h1>
-            <h1><NavLink to='/'onClick={handleLogout} style={{textAlign:"center",backgroundColor:"orange",borderRadius:"10px", padding:"3px", color:"#fff", textDecoration:"none", fontSize:"30px"}} ><img style={{width:"100px", heigth:"100px"}} src={Logout} alt="Logout btn" / ></NavLink></h1>
+           <div className="btnHeaderSingle">
+            <h1><NavLink to='/' ><img className="imgHeaderSingle" src={Retour} alt="Retour btn" / ></NavLink></h1>
+            <h1><NavLink to='/'onClick={handleLogout} ><img className="imgHeaderSingle" src={Logout} alt="Logout btn" / ></NavLink></h1>
            </div>
             {/* <img style={{width:"290px", heigth:"290px"}} src={Logo} alt="Logo" / > */}
-            <h1 className="titleSingleBook">BOOK STARBOOK ACADEMY</h1>
+            {/* <h1 className="titleSingleBook">BOOK STARBOOK ACADEMY</h1> */}
             {/* <h1 style={{textAlign:"center"}}>ALL BOOKS</h1> */}
            </div>
             <hr />
           
         </Grid>
        </Grid>
-        {isloading ? (
+       {isloading ? (
           <ReactLoading type={"bars"} color="#021155" />
         ) : (
           <div>
