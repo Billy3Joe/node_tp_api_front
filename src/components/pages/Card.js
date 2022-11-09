@@ -35,7 +35,9 @@ export default class Card extends Component {
           <h2  style={{color:"#000", textTransform:"uppercase"}}>{this.props.title}</h2>
           <p  style={{color:"orange", textTransform:"uppercase"}}>{this.props.categories}</p>
           <p style={{textAlign:"center"}}>{this.props.description}</p>
-          <p>{this.props.price} €</p>
+          <p>PRIX : <strong style={{fontWeight:"bold"}}>{this.props.price} €</strong></p>
+          <p>ISBN :  <strong style={{fontWeight:"bold"}}>{this.props.isbn}</strong></p>
+          <p>{this.props.nbr_pages} pages</p>
           <p>{this.props.createdAt}</p>
           {window.localStorage.getItem("isAdmin")==="true"?
           <p style={{display:"flex", gap:"10px", justifyContent:"center"}}> 

@@ -10,7 +10,6 @@ import Home from "./components/pages/Home";
 //Users
 import AllUsers from "./components/pages/AllUsers";
 import SingleUser from "./components/pages/SingleUser";
-// import CreateUser from "./components/pages/CreateUser";
 //Books
 import CreateBook from "./components/pages/CreateBook";
 import SingleBook from "./components/pages/SingleBook";
@@ -36,7 +35,6 @@ function App() {
 
           <Route path="/all-user" element={<AllUsers />} />
           <Route path="/single-user/:id" element={<SingleUser />} />
-          {/* <Route path="/create-user" element={<CreateUser />} /> */}
           <Route path="*" element={<h1>Error 404 Page not found !!</h1>} />
         </Routes>
       </BrowserRouter>

@@ -57,6 +57,8 @@ export default class Home extends Component {
                     categories={x.categories}
                     description={x.description}
                     price={x.price}
+                    isbn={x.isbn}
+                    nbr_pages={x.nbr_pages}
                     author={x.author}
                     createdAt = {x.createdAt}
                   />
