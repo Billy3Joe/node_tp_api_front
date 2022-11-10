@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import "../pages/styles.css";
+import "../footer.css"
 import axios from "axios";
 // import Card from "../pages/Card";
 import Retour from '../../images/retour.png';
@@ -10,6 +11,7 @@ import ReactLoading from "react-loading";
 import { useParams } from "react-router-dom";
 import WriteComments from "./WriteComment";
 import ViewComments from "../pages/ViewComments";
+import Footer from "../Footer";
 
 
 function withParams(Component) {
@@ -96,6 +98,7 @@ class SingleBook extends Component {
                   {/* <h1 className="commenter">Commenter</h1> */}
                   <WriteComments />
                 </div>
+                <Footer />
               </div>
           </div>
         )}

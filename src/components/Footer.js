@@ -23,13 +23,13 @@ const Footer = () => {
 				<h6>Follow us on</h6>
 				<ul className="footer-links reseaux">
 					<div>
-						<li><a href="#">  <h1><NavLink to='/' ><img className="imgHeaderSingle" src={Facebook} alt="Facebook" / ></NavLink></h1></a></li>
-						<li><a href="#">  <h1><NavLink to='/' ><img className="imgHeaderSingle" src={Instagram} alt="Instagram" / ></NavLink></h1></a></li>
+						<li><a href="#">  <h1><NavLink to='/' ><img className="logoReseauxFooter" src={Facebook} alt="Facebook" / ></NavLink></h1></a></li>
+						<li><a href="#">  <h1><NavLink to='/' ><img className="logoReseauxFooter" src={Instagram} alt="Instagram" / ></NavLink></h1></a></li>
 					</div>
 					
 					<div>
-						<li><a href="#">  <h1><NavLink to='/' ><img className="imgHeaderSingle" src={Twitter} alt="Twitter" / ></NavLink></h1></a></li>
-						<li><a href="#">  <h1><NavLink to='/' ><img className="imgHeaderSingle" src={Youtube} alt="Youtube" / ></NavLink></h1></a></li>
+						<li><a href="#">  <h1><NavLink to='/' ><img className="logoReseauxFooter" src={Twitter} alt="Twitter" / ></NavLink></h1></a></li>
+						<li><a href="#">  <h1><NavLink to='/' ><img className="logoReseauxFooter" src={Youtube} alt="Youtube" / ></NavLink></h1></a></li>
 					</div>
 				</ul>
 			  </div>

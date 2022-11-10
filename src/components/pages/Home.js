@@ -3,11 +3,11 @@ import "../pages/styles.css";
 import "../footer.css"
 import axios from "axios";
 import Card from "../pages/Card";
-import Footer from "../Footer";
 import Logo from '../../images/logo.png'
 import React, { Component } from "react";
 //import {NavLink} from 'react-router-dom';
 import ReactLoading from "react-loading";
+import Footer from "../Footer";
 
 export default class Home extends Component {
   constructor(props) {

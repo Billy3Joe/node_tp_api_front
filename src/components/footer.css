@@ -6,8 +6,6 @@
   line-height:24px;
   width: 100%;
   color:#737373;
-  position: sticky;
-  bottom:0;
 }
 .site-footer hr
 {
@@ -47,6 +45,10 @@
   right: 18px;
 }
 
+.logoReseauxFooter{
+  height: 50px;
+  width: 50px;
+}
 .footer-links
 {
   list-style:none
