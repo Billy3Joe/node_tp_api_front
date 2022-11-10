@@ -8,17 +8,17 @@ const Navbar = () => {
   const handleLogout = () => {
     console.log("Logout Clicked");
     window.localStorage.clear();
+    window.localStorage.reload(false);
     navigate('/');
   }
   return <>
     <Box sx={{ flexGrow: 1 }}className="header">
       <AppBar position="static" color="" style={{ backgroundColor:'#26272b'}}>
         <Toolbar>
-            <Typography variant='h5' component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant='h5' component="div" sx={{ flexGrow: 1 }}>
               <Button component={NavLink} to='/' style={({ isActive }) => { return { backgroundColor: isActive ? 'rgba(227, 158, 31, 0.76)' : '' } }} sx={{ color: 'white', textTransform: 'none', width:"50px", heigth:"50px"}}>Home</Button>
               {/* <img style={{width:"70px", heigth:"70px"}} src={Logo} alt="Logo" / > */}
-            </Typography>
-           
+            </Typography> 
           {window.localStorage.getItem('isAdmin')=='true'?<Button component={NavLink} to='/create-book' style={({ isActive }) => { return { backgroundColor: isActive ? 'rgba(227, 158, 31, 0.76)' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Create Book</Button>:""}
           {/* <Button component={NavLink} to='/create-book' style={({ isActive }) => { return { backgroundColor: isActive ? 'orange' : '' } }} sx={{ color: 'white', textTransform: 'none' }}>Create Book</Button> */}
           

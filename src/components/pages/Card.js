@@ -41,13 +41,13 @@ export default class Card extends Component {
           <p>{this.props.createdAt}</p>
           {window.localStorage.getItem("isAdmin")==="true"?
           <p style={{display:"flex", gap:"10px", justifyContent:"center"}}> 
-            <button type="submit" className="delete" onClick={dltBook}>
-              Delete
-            </button>
+          <button type="submit" className="delete" onClick={()=>dltBook(this.props.id)}>
+            Delete
+          </button>
 
-            <button type="submit" className="update" onClick={updateBookData}>
-            Update
-            </button>
+          <button type="submit" className="update" onClick={updateBookData}>
+          Update
+          </button>
           </p>:""
           }
           

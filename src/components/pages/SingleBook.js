@@ -92,14 +92,17 @@ class SingleBook extends Component {
               <div className="cardComments">
                 <div className="comments">
                   <h1 style={{fontWeight:"100"}}>Commentaires</h1>
-                  <ViewComments />
+                  <ViewComments 
+                    idBook={x._id}
+                    review={x.review}
+                  />
                 </div>
                 <div>
                   {/* <h1 className="commenter">Commenter</h1> */}
                   <WriteComments />
                 </div>
-                <Footer />
               </div>
+              <Footer />
           </div>
         )}
       </>

@@ -75,4 +75,3 @@ const WriteComment= () => {
   };
   
   export default WriteComment;
-  
