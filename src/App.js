@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginReg from "./components/pages/auth/LoginReg";
 import ResetPassword from "./components/pages/auth/ResetPassword";
 import SendPasswordResetEmail from "./components/pages/auth/SendPasswordResetEmail";
-// import Contact from "./components/pages/Contact";
+import Contact from "./components/pages/Contact";
 import Dashboard from "./components/pages/Dashboard";
 import Register from "./components/pages/Register";
 import Home from "./components/pages/Home";
@@ -35,6 +35,7 @@ function App() {
 
           <Route path="/all-user" element={<AllUsers />} />
           <Route path="/single-user/:id" element={<SingleUser />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<h1>Error 404 Page not found !!</h1>} />
         </Routes>
       </BrowserRouter>

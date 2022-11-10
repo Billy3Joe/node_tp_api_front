@@ -1,7 +1,9 @@
 import { Grid } from "@mui/material";
 import "../pages/styles.css";
+import "../footer.css"
 import axios from "axios";
 import Card from "../pages/Card";
+import Footer from "../Footer";
 import Logo from '../../images/logo.png'
 import React, { Component } from "react";
 //import {NavLink} from 'react-router-dom';
@@ -65,6 +67,7 @@ export default class Home extends Component {
                   />
                 );
               })}
+               <Footer />
             </div>
         )}
       </>

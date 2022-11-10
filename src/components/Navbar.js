@@ -11,8 +11,8 @@ const Navbar = () => {
     navigate('/');
   }
   return <>
-    <Box sx={{ flexGrow: 1 }}  style={{position:"sticky", top:"0", zIndex:"1000"}}>
-      <AppBar position="static" color="primary">
+    <Box sx={{ flexGrow: 1 }}className="header">
+      <AppBar position="static" color="" style={{ backgroundColor:'#26272b'}}>
         <Toolbar>
             <Typography variant='h5' component="div" sx={{ flexGrow: 1 }}>
               <Button component={NavLink} to='/' style={({ isActive }) => { return { backgroundColor: isActive ? 'rgba(227, 158, 31, 0.76)' : '' } }} sx={{ color: 'white', textTransform: 'none', width:"50px", heigth:"50px"}}>Home</Button>

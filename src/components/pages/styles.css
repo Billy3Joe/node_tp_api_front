@@ -8,6 +8,11 @@ body {
   align-items: center;
   font-family: 'Open Sans', sans-serif;
 }
+.header{
+position: sticky;
+top: 0;
+z-index: 100;
+}
 
 h2, h5 {
   margin: 0;
@@ -301,6 +306,11 @@ text-decoration: none;
 }
 
 @media (max-width: 960px) {
+  .header{
+    position: sticky;
+    top:-100px;
+    z-index: 100;
+    }
   .card-single-book{ 
     display: flex;
     flex-direction: column;
@@ -313,7 +323,7 @@ text-decoration: none;
   .card {
     text-align: center;
     background: #fff;
-    width: 15em;
+    width: 35em;
     border-radius: 0.6em;
     margin: 1em;
     overflow: hidden;
@@ -358,6 +368,11 @@ text-decoration: none;
 }
 
 @media (max-width: 768px) {
+  .header{
+    position: sticky;
+    top:-100px;
+    z-index: 100;
+    }
   .card-single-book{ 
     display: flex;
     flex-direction: column;
@@ -370,7 +385,7 @@ text-decoration: none;
   .card {
     text-align: center;
     background: #fff;
-    width: 20em;
+    width: 35em;
     border-radius: 0.6em;
     margin: 1em;
     overflow: hidden;
@@ -384,7 +399,7 @@ text-decoration: none;
     margin-left: 70px;
   }
   .cardComments{
-    background: orange;
+    background: transparent;
     overflow: hidden;
    }
   .registerButton{
