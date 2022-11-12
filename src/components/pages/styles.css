@@ -247,7 +247,6 @@ text-decoration: none;
   justify-content: center;
   margin-top: 0px;
   width: 500px;
-  height: 500px;
   margin-left: 520px;
 }
 .comment-form {
@@ -283,9 +282,9 @@ text-decoration: none;
   color: white;
   border: 2px solid #fff;
   border-radius: 5px;
+  padding: 5px;
   position: absolute;
   left: 520px;
-  bottom: 15px;
   width: 503px;
 }
 
@@ -343,6 +342,10 @@ text-decoration: none;
     background: orange;
     overflow: hidden;
    }
+   .br{
+    padding-top: 70px;
+  }
+
   .registerButton{
     background-color: orange;
     color: white;
@@ -353,9 +356,7 @@ text-decoration: none;
     top: 30px;
     width: 230px;
   }
-  .br{
-    padding-top: 70px;
-  }
+  
   .titleAllUsers{
     font-size: 23px;
     }
@@ -401,6 +402,9 @@ text-decoration: none;
     background: transparent;
     overflow: hidden;
    }
+   .br{
+    padding-top: 70px;
+  }
   .registerButton{
     background-color: orange;
     color: white;
@@ -411,9 +415,7 @@ text-decoration: none;
     top: 30px;
     width: 230px;
   }
-  .br{
-    padding-top: 70px;
-  }
+
   .titleAllUsers{
     font-size: 23px;
     }

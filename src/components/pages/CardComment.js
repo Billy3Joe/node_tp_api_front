@@ -51,7 +51,7 @@ export default class CardComment extends Component {
             </button>
 
             <button type="submit" className="update" onClick={updateCommentData}>
-            Update
+             Update
             </button>
           </p>
 

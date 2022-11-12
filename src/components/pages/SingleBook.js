@@ -39,13 +39,13 @@ class SingleBook extends Component {
     let x = this.state.book;
     console.log(`Data disponible`,x.imageURL);
     let { isloading } = this.state;
-    let idBook = this.state.idBook
+ 
        //Function Logout;
-       const handleLogout = () => {
-        console.log("Logout Clicked");
-        window.localStorage.clear();
-        // navigate('/');
-      }
+      //  const handleLogout = () => {
+      //   console.log("Logout Clicked");
+      //   window.localStorage.clear();
+      //   navigate('/');
+      // }
     return (
       <>
         <Grid container justifyContent='center'>
@@ -95,7 +95,7 @@ class SingleBook extends Component {
                 <div>
                   {/* <h1 className="commenter">Commenter</h1> */}
                   <WriteComment
-                    idBook={idBook}
+                    idBook={x._id}
                   />
                 </div>
               </div>

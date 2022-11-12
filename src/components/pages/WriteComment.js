@@ -5,7 +5,7 @@ import { TextField, FormControlLabel, Checkbox, Button, Box, Alert } from '@mui/
 
 import "bootstrap/dist/css/bootstrap.min.css";
 const WriteComment= (props) => {
-  const [id, setId] = useState(props.idBook)
+  const[id,setId]=useState(props.idBook)
     const [error, setError] = useState({
       status: false,
       msg: "",
@@ -17,9 +17,9 @@ const WriteComment= (props) => {
       e.preventDefault();
       const data = new FormData(e.currentTarget);
       const actualData = {
-        bookId: id,
+        bookId:id,
         message:data.get('message'),
-        grade: data.get('grade'),
+        grade:data.get('grade'),
        
       }
       if (actualData.message && actualData.grade !== null) {
@@ -34,7 +34,7 @@ const WriteComment= (props) => {
           document.getElementById('registration-form').reset()
           setError({ status: true, msg: "Create Review Successful", type: 'success' })
           //Pour actualiser la page automatiquement après la suppression
-          // window.location.reload(false);
+          window.location.reload(false);
        
       } else {
         setError({ status: true, msg: "All Fields are Required", type: 'error' })
@@ -65,9 +65,12 @@ const WriteComment= (props) => {
                   />
 
                 </div>
-                <button className="registerButton" type="submit" style={{padding:"5px"}}>
+                <button className="registerButton" type="submit">
                   Add a comment
                 </button>
+                <br />
+                <br />
+                <br />
                 {/* <div  className="br">
                  {props.idBook}
                 </div> */}
