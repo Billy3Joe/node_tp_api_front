@@ -10,8 +10,12 @@ import Home from "./components/pages/Home";
 //Users
 import AllUsers from "./components/pages/AllUsers";
 import SingleUser from "./components/pages/SingleUser";
+import UpdateUser from "./components/pages/UpdateUser";
+import ChangeRoleUser from "./components/pages/ChangeRoleUser";
+
 //Books
 import CreateBook from "./components/pages/CreateBook";
+import UpdateBook from "./components/pages/UpdateBook";
 import SingleBook from "./components/pages/SingleBook";
 import Layout from "./components/pages/Layout";
 
@@ -26,17 +30,19 @@ function App() {
             <Route path="login" element={<LoginReg />} />
             <Route path="sendpasswordresetemail" element={<SendPasswordResetEmail />} />
             <Route path="reset" element={<ResetPassword />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/create-book" element={<CreateBook />} />
+            <Route path="/update-book" element={<UpdateBook />} />
+            <Route path="/single-book/:id" element={<SingleBook />} />
+            <Route path="/all-user" element={<AllUsers />} />
+            <Route path="/single-user/:id" element={<SingleUser />} />
+            <Route path="/update-user" element={<UpdateUser />} />
+            <Route path="/change-role-user" element={<ChangeRoleUser />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<h1>Error 404 Page not found !!</h1>} />
           </Route>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/create-book" element={<CreateBook />} />
-          <Route path="/single-book/:id" element={<SingleBook />} />
-
-          <Route path="/all-user" element={<AllUsers />} />
-          <Route path="/single-user/:id" element={<SingleUser />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<h1>Error 404 Page not found !!</h1>} />
         </Routes>
       </BrowserRouter>
     </div>

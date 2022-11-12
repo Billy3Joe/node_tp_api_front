@@ -1,11 +1,26 @@
 import "../pages/styles.css";
 import React, { Component } from "react";
-
-
+import {NavLink} from 'react-router-dom';
+import axios from "axios";
 // import {NavLink} from 'react-router-dom';
 
 //Function pour supprimer à gérer
-const deleteUserData = async (e) => {}
+const dltUser = async (id) => {
+  const res = await axios.delete(`http://localhost:5000/api/v1/delete-user/${id}`, {
+      headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${window.localStorage.getItem('token')}`
+      }
+  });
+
+  if (res.data.status === 401 || !res.data) {
+      console.log("errror")
+  } else {
+      console.log("book delete");
+      //Pour actualiser la page automatiquement après la suppression
+      window.location.reload(false);
+  }
+}
 
 //Function pour modifier à gérer
 const updateUserData = async (e) => {}
@@ -21,13 +36,21 @@ export default class CardUser extends Component {
           <p>{this.props.role}</p>
     
           <p style={{display:"flex", gap:"10px", justifyContent:"center"}}> 
-            <button type="submit" className="delete" onClick={deleteUserData}>
-              Delete
-            </button>
+              <button type="submit" className="delete" onClick={dltUser}>
+                Delete
+              </button>
+          
+            <NavLink to='/change-role-user'>
+              <button type="submit" className="update" onClick={updateUserData}>
+              Change rôle user
+              </button>
+            </NavLink>
 
-            <button type="submit" className="update" onClick={updateUserData}>
-            Update
-            </button>
+            <NavLink to='/update-user'>
+              <button type="submit" className="update" onClick={updateUserData}>
+              Update
+              </button>
+           </NavLink>
           </p>
 
         </div>

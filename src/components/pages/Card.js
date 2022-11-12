@@ -16,6 +16,8 @@ const dltBook = async (id) => {
       console.log("errror")
   } else {
       console.log("book delete");
+      //Pour actualiser la page automatiquement après la suppression
+      window.location.reload(false);
   }
 }
 
@@ -44,10 +46,12 @@ export default class Card extends Component {
           <button type="submit" className="delete" onClick={()=>dltBook(this.props.id)}>
             Delete
           </button>
-
-          <button type="submit" className="update" onClick={updateBookData}>
-          Update
-          </button>
+          
+          <NavLink to='/update-book'>
+            <button type="submit" className="update" onClick={updateBookData}>
+            Update
+            </button>
+          </NavLink>
           </p>:""
           }
           

@@ -3,13 +3,11 @@ import "../pages/styles.css";
 import "../footer.css"
 import axios from "axios";
 // import Card from "../pages/Card";
-import Retour from '../../images/retour.png';
-import Logout from '../../images/logout.webp';
 import React, { Component } from "react";
 import { NavLink} from 'react-router-dom';
 import ReactLoading from "react-loading";
 import { useParams } from "react-router-dom";
-import WriteComments from "./WriteComment";
+import WriteComment from "./WriteComment";
 import ViewComments from "../pages/ViewComments";
 import Footer from "../Footer";
 
@@ -21,6 +19,7 @@ class SingleBook extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      idBook:this.props.params,
       book:{},
       isloading: true
     };
@@ -40,7 +39,7 @@ class SingleBook extends Component {
     let x = this.state.book;
     console.log(`Data disponible`,x.imageURL);
     let { isloading } = this.state;
-
+    let idBook = this.state.idBook
        //Function Logout;
        const handleLogout = () => {
         console.log("Logout Clicked");
@@ -53,10 +52,6 @@ class SingleBook extends Component {
         <Grid item sm={10}> 
            <div style={{display:"flex", flexDirection:"column", justifyContent:"space-between", alignItems:"center"}}>
            <br />
-           <div className="btnHeaderSingle">
-            <h1><NavLink to='/' ><img className="imgHeaderSingle" src={Retour} alt="Retour btn" / ></NavLink></h1>
-            <h1><NavLink to='/'onClick={handleLogout} ><img className="imgHeaderSingle" src={Logout} alt="Logout btn" / ></NavLink></h1>
-           </div>
             {/* <img style={{width:"290px", heigth:"290px"}} src={Logo} alt="Logo" / > */}
             {/* <h1 className="titleSingleBook">BOOK STARBOOK ACADEMY</h1> */}
             {/* <h1 style={{textAlign:"center"}}>ALL BOOKS</h1> */}
@@ -70,7 +65,7 @@ class SingleBook extends Component {
         ) : (
           <div>
               <div className="card-single-book">
-              <img src={x.imageUrl} alt="imageUrl" className="imgSingleBook" />
+              <img src={x.imageURL} alt="imageUrl" className="imgSingleBook" />
                <div className="card-body-single-book">
                  <h2  style={{color:"#000", textTransform:"uppercase"}}>{x.title}</h2>
                  <p  style={{color:"orange", textTransform:"uppercase"}}>{x.categories}</p>
@@ -83,7 +78,7 @@ class SingleBook extends Component {
                  <br />
               </div>
               <div>
-               <img src={x.imageUrl} alt="imageUrl" className="imgSingleBook" />
+               <img src={x.imageURL} alt="imageUrl" className="imgSingleBook" />
               </div>
             </div> 
         
@@ -99,7 +94,9 @@ class SingleBook extends Component {
                 </div>
                 <div>
                   {/* <h1 className="commenter">Commenter</h1> */}
-                  <WriteComments />
+                  <WriteComment
+                    idBook={idBook}
+                  />
                 </div>
               </div>
               <Footer />

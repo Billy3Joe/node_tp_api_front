@@ -5,8 +5,8 @@ import axios from "axios";
 // import {NavLink} from 'react-router-dom';
 
 //Function pour supprimer à gérer
-const dltReview = async (id,idbook) => {
-  const res = await axios.put(`http://localhost:5000/api/v1/delete-review/${idbook}&${id}`, {
+const dltReview = async (idrev,idbook) => {
+  const res = await axios.put(`http://localhost:5000/api/v1/delete-review/${idbook}&${idrev}`, {
       headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${window.localStorage.getItem('token')}`
@@ -17,6 +17,8 @@ const dltReview = async (id,idbook) => {
       console.log("errror")
   } else {
       console.log("book delete");
+      //Pour actualiser la page automatiquement après la suppression
+      window.location.reload(false);
   }
 
 }

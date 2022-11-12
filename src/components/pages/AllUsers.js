@@ -4,8 +4,6 @@ import "../footer.css"
 import axios from "axios";
 import CardUser from "../pages/CardUser";
 // import Logo from '../../images/logo.png';
-import Retour from '../../images/retour.png';
-import Logout from '../../images/logout.webp';
 import React, { Component } from "react";
 import { NavLink} from 'react-router-dom';
 import ReactLoading from "react-loading";
@@ -50,10 +48,6 @@ export default class AllUsers extends Component {
            <Grid item sm={10}> 
               <div style={{display:"flex", flexDirection:"column", justifyContent:"space-between", alignItems:"center"}}>
               <br />
-              <div className="btnHeaderSingle">
-                <h1><NavLink to='/' ><img className="imgHeaderSingle" src={Retour} alt="Retour btn" / ></NavLink></h1>
-                <h1><NavLink to='/'onClick={handleLogout} ><img className="imgHeaderSingle" src={Logout} alt="Logout btn" / ></NavLink></h1>
-              </div>
                 {/* <img style={{width:"290px", heigth:"290px"}} src={Logo} alt="Logo" / > */}
                 {/* <h1 className="titleSingleBook">BOOK STARBOOK ACADEMY</h1> */}
                 {/* <h1 style={{textAlign:"center"}}>ALL BOOKS</h1> */}

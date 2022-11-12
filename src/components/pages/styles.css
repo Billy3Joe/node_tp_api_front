@@ -75,15 +75,22 @@ h2, h5 {
 }
 .delete{
   border: 2px solid #fff;
-  border-radius: 3px;
+  border-radius: 5px;
   background-color: red;
   color: #fff;
   cursor: pointer;
 
 }
+.change-role{
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background-color: gray;
+  color: #fff;
+  cursor: pointer;
+}
 .update{
   border: 2px solid #fff;
-  border-radius: 3px;
+  border-radius: 5px;
   background-color: orange;
   color: #fff;
   cursor: pointer;
@@ -163,11 +170,7 @@ div#securitySection {
   margin-bottom: 0.5em;
 }
 
-.btnHeaderSingle{
-display: flex;
-justify-content: space-between;
-gap: 1350px;
-}
+
 
 /* USERS */
 .imgHeaderSingle{
@@ -360,11 +363,7 @@ text-decoration: none;
       height: 50px;
       width: 50px;
     }
-    .btnHeaderSingle{
-      display: flex;
-      justify-content: space-between;
-      gap: 230px;
-      }
+  
 }
 
 @media (max-width: 768px) {
@@ -422,9 +421,4 @@ text-decoration: none;
       height: 50px;
       width: 50px;
     }
-    .btnHeaderSingle{
-      display: flex;
-      justify-content: space-between;
-      gap: 230px;
-      }
 }

@@ -23,7 +23,7 @@ const schema = yup.object().shape({
     nbr_pages: yup.number().required("Please your pages number"),
 });
 
-const CreateBook = () => {
+const UpdateBook = () => {
   //const{register,handleSubmit}=useForm();
   const {
     register,
@@ -54,16 +54,33 @@ const CreateBook = () => {
     form.append("isbn", data.isbn)
     form.append("nbr_pages", data.nbr_pages)
     form.append("image",data.image[0])
-  
+    // const myform = new FormData();
+    // myform.append("image",file)
+    //console.log('mydata',form);
+  //console.log('1::::::!',file)
+  // const img={
+  //   fieldname: 'image',
+  //   originalname: file.name,
+  //   encoding: '7bit',
+  //   mimetype: file.type
+  // }
+  // const myData = {
+  //   title:dat.get('title'),
+  //   author:dat.get('author'),
+  //   categories:dat.get('categories'),
+  //   description:dat.get('description'),
+  //   price:dat.get('price'),
+  //   isbn:dat.get('isbn'),
+  //   nbr_pages:dat.get('nbr_pages'),
+  //   image:img
+  // }
   //console.log(myData);
-  const res = await fetch("http://localhost:5000/api/v1/create-book", {
-    method: "POST",
+  const res = await fetch("http://localhost:5000/api/v1/update-book", {
+    method: "PUT",
     body: form,
     headers:{Authorization: `Bearer ${window.localStorage.getItem('token')}`}
 }).then((res) => res.json());
-    alert(JSON.stringify(`${res.message}, status: ${res.status}`));
-    //Pour actualiser la page automatiquement après la suppression
-    window.location.reload(false);
+alert(JSON.stringify(`${res.message}, status: ${res.status}`));
   
   
     //console.log('image',form.get('image'));
@@ -91,7 +108,7 @@ const CreateBook = () => {
 
   return (
     <>
-       <h1 style={{textAlign:"center", color:"orange", textDecoration:"none", fontSize:"35px", fontWeight:"bold"}}>CREATE BOOK</h1>
+       <h1 style={{textAlign:"center", color:"orange", textDecoration:"none", fontSize:"35px", fontWeight:"bold"}}>UPDATE BOOK</h1>
       <Container>
         <Row className="justify-content-md-center">
           <Card className="registerCardPage">
@@ -201,7 +218,7 @@ const CreateBook = () => {
                 <br />
                 <br />
                 <Button className="btnCreateBook" type="submit">
-                  Create Book
+                  Update Book
                 </Button>
                 <br />
                 <br />
@@ -216,4 +233,4 @@ const CreateBook = () => {
   );
 };
 
-export default CreateBook;
+export default UpdateBook;
