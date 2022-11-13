@@ -5,23 +5,26 @@ import axios from "axios";
 // import {NavLink} from 'react-router-dom';
 
 //Function pour supprimer à gérer
-const dltReview = async (idrev,idbook) => {
-  const res = await axios.put(`http://localhost:5000/api/v1/delete-review/${idbook}&${idrev}`, {
-      headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${window.localStorage.getItem('token')}`
-      }
-  });
+const dltReview = async (id,idbook) => {
+//   const res = await axios.put(`http://localhost:5000/api/v1/delete-review/${idbook}&${id}`, {
+//       headers: {
+//           Authorization: `Bearer ${window.localStorage.getItem('token')}`
+//       }
+//   });
 
-  if (res.data.status === 401 || !res.data) {
-      console.log("errror")
-  } else {
-      console.log("book delete");
-      //Pour actualiser la page automatiquement après la suppression
-      window.location.reload(false);
-  }
+//   if (res.data.status === 401 || !res.data) {
+//       console.log("errror")
+//   } else {
+//       console.log("book delete");
+//   }
+const res = await fetch(`http://localhost:5000/api/v1/delete-review/${idbook}&${id}`, {
+    method: "PUT",
+    headers:{Authorization: `Bearer ${window.localStorage.getItem('token')}`}
+}).then((res) => res.json());
+alert(JSON.stringify(`${res.message}, status: ${res.status}`));
+window.location.reload(false)
+ }
 
-}
 
 //Function pour modifier à gérer
 const updateCommentData = async (e) => {}
@@ -46,13 +49,10 @@ export default class CardComment extends Component {
           <h2>{this.props.description}</h2>
           <p>{this.props.grade}</p>
           <p style={{display:"flex", gap:"10px", justifyContent:"center"}}> 
-            <button type="submit" className="delete" onClick={()=>dltReview(this.props.idrev,this.props.idBook)}>
+          {window.localStorage.getItem('isAdmin')=='true'?<button type="submit" className="delete" onClick={()=>dltReview(this.props.idrev,this.props.idBook)}>
               Delete
-            </button>
-
-            <button type="submit" className="update" onClick={updateCommentData}>
-             Update
-            </button>
+            </button>:""}
+                    
           </p>
 
         </div>

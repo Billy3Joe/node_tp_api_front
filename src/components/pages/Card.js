@@ -2,6 +2,7 @@ import "../pages/styles.css";
 import React, { Component } from "react";
 import {NavLink} from 'react-router-dom';
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 //Function pour supprimer à gérer
 const dltBook = async (id) => {
@@ -16,13 +17,9 @@ const dltBook = async (id) => {
       console.log("errror")
   } else {
       console.log("book delete");
-      //Pour actualiser la page automatiquement après la suppression
       window.location.reload(false);
   }
 }
-
-//Function pour modifier à gérer
-const updateBookData = async (e) => {}
 
 export default class Card extends Component {
   render() {
@@ -30,32 +27,30 @@ export default class Card extends Component {
     return (
       <div className="card">
         <NavLink to={URL}>
-         <img src={this.props.imageURL} alt="imageURL" className="imgHomeBook" />
+         <img src={this.props.imageURL} alt="imageURL" style={{width:"390px", height:"250px"}} />
         </NavLink>
        
         <div className="card-body">
           <h2  style={{color:"#000", textTransform:"uppercase"}}>{this.props.title}</h2>
           <p  style={{color:"orange", textTransform:"uppercase"}}>{this.props.categories}</p>
           <p style={{textAlign:"center"}}>{this.props.description}</p>
-          <p>PRIX : <strong style={{fontWeight:"bold"}}>{this.props.price} €</strong></p>
-          <p>ISBN :  <strong style={{fontWeight:"bold"}}>{this.props.isbn}</strong></p>
-          <p>{this.props.nbr_pages} pages</p>
+          <p>{this.props.price} €</p>
           <p>{this.props.createdAt}</p>
           {window.localStorage.getItem("isAdmin")==="true"?
           <p style={{display:"flex", gap:"10px", justifyContent:"center"}}> 
-          <button type="submit" className="delete" onClick={()=>dltBook(this.props.id)}>
-            Delete
-          </button>
-          
-          <NavLink to='/update-book'>
-            <button type="submit" className="update" onClick={updateBookData}>
-            Update
+            <button type="submit" className="delete" onClick={()=>dltBook(this.props.id)}>
+              Delete
             </button>
-          </NavLink>
+            <NavLink to={'/update-book'} state={{id:this.props.id}}
+             >
+              <button type="submit" className="update">
+              Update
+              </button>
+            </NavLink>
+            
           </p>:""
           }
-          
-
+        
           <h5>Publué par <strong style={{color:"green", textDecoration:"underline"}}>{this.props.author}</strong></h5>
         </div>
       </div>

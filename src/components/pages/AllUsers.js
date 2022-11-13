@@ -63,6 +63,7 @@ export default class AllUsers extends Component {
                 {res?.data?.data?.map((x) => {
                   return (
                     <CardUser
+                      idUser={x._id}
                       name={x.name}
                       email={x.email}
                       phone={x.phone}

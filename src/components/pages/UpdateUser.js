@@ -49,7 +49,7 @@ const UpdateUser = () => {
       form.append("name", data.name)
       form.append("email", data.email)
       form.append("phone", data.phone)
-      form.append("role", data.role)
+      form.append("password", data.password)
 
     const res = await fetch("http://localhost:5000/api/v1/update-user", {
       method: "PUT",
@@ -57,6 +57,8 @@ const UpdateUser = () => {
       headers:{Authorization: `Bearer ${window.localStorage.getItem('token')}`}
     }).then((res) => res.json());
      alert(JSON.stringify(`${res.message}, status: ${res.status}`));
+     navigate('/all-user')
+     alert("Update user succeffully")
   
      };
   
@@ -112,9 +114,9 @@ const UpdateUser = () => {
 
                 {/* Téléphone */}
                 <Form.Group>
-                  <Form.Label>Role</Form.Label>
+                  <Form.Label>Password</Form.Label>
                   <input
-                    {...register("role")}
+                    {...register("password")}
                     type="text"
                     className={`form-control`}
                     

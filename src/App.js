@@ -5,13 +5,13 @@ import SendPasswordResetEmail from "./components/pages/auth/SendPasswordResetEma
 import Contact from "./components/pages/Contact";
 import Dashboard from "./components/pages/Dashboard";
 import Register from "./components/pages/Register";
+import MonCompte from "./components/pages/MonCompte";
 import Home from "./components/pages/Home";
 
 //Users
 import AllUsers from "./components/pages/AllUsers";
 import SingleUser from "./components/pages/SingleUser";
 import UpdateUser from "./components/pages/UpdateUser";
-import ChangeRoleUser from "./components/pages/ChangeRoleUser";
 
 //Books
 import CreateBook from "./components/pages/CreateBook";
@@ -32,6 +32,7 @@ function App() {
             <Route path="reset" element={<ResetPassword />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/compte" element={<MonCompte />} />
             <Route path="/home" element={<Home />} />
             <Route path="/create-book" element={<CreateBook />} />
             <Route path="/update-book" element={<UpdateBook />} />
@@ -39,7 +40,6 @@ function App() {
             <Route path="/all-user" element={<AllUsers />} />
             <Route path="/single-user/:id" element={<SingleUser />} />
             <Route path="/update-user" element={<UpdateUser />} />
-            <Route path="/change-role-user" element={<ChangeRoleUser />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<h1>Error 404 Page not found !!</h1>} />
           </Route>
